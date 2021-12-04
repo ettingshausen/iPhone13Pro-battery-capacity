@@ -1,0 +1,30 @@
+[
+    {
+        "cicles": 7,
+        "actualCapacity": 3174,
+        "designCapacity": 3076,
+        "batteryLife": 100,
+        "time": "2021-11-17 13:42"
+    },
+    {
+        "cicles": 11,
+        "actualCapacity": 3166,
+        "designCapacity": 3076,
+        "batteryLife": 100,
+        "time": "2021-11-24 10:53"
+    },
+    {
+        "cicles": 16,
+        "actualCapacity": 3169,
+        "designCapacity": 3076,
+        "batteryLife": 100,
+        "time": "2021-12-02 12:15"
+    },
+    {
+        "cicles": 17,
+        "actualCapacity": 3167,
+        "designCapacity": 3076,
+        "batteryLife": 100,
+        "time": "2021-12-05 12:15"
+    }
+]
