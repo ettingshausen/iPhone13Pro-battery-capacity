@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.1.2/echarts.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="main" style="width: 600px; height: 300px;"></div>
+    <script>
+
+        $.getJSON('./data.json', function (data) {
+            var chartDom = document.getElementById('main');
+            var myChart = echarts.init(chartDom);
+
+            var option = {
+
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['Cicles', 'Actual Capacity', 'Design Capacity', 'Battery Life']
+                },
+
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                xAxis: {
+                    data: data.map(item => item.time),
+                },
+                yAxis: [{
+                    type: 'value',
+                    min: 2000,
+                    max: 3500,
+                    position: 'left'
+                }, {
+                    type: 'value',
+                    min: 80,
+                    max: 100,
+                    offset: 0,
+                    position: 'right',
+                    axisLabel: {
+                        formatter: '{value} %'
+                    }
+                }, {
+                    type: 'value',
+                    min: 0,
+                    max: 100,
+                    position: 'right',
+                    offset: 60,
+                    axisLabel: {
+                        formatter: '{value} cnt'
+                    }
+                }],
+                series: [
+                    {
+                        yAxisIndex: 2,
+                        name: 'Cicles',
+                        type: 'line',
+                        data: data.map(item => item.cicles)
+                    },
+                    {
+                        yAxisIndex: 0,
+                        name: 'Actual Capacity',
+                        type: 'line',
+                        data: data.map(item => item.actualCapacity)
+                    },
+                    {
+                        yAxisIndex: 0,
+                        name: 'Design Capacity',
+                        type: 'line',
+                        data: data.map(item => item.designCapacity)
+                    },
+                    {
+                        yAxisIndex: 1,
+                        name: 'Battery Life',
+                        type: 'line',
+                        data: data.map(item => item.batteryLife)
+                    }
+                ]
+            };
+
+            option && myChart.setOption(option);
+
+        })
+
+
+
+
+    </script>
+</body>
