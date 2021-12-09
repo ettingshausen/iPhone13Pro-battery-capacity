@@ -6,21 +6,21 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         #main {
-            margin-left: 30%;
-            margin-top: 10%;
-            width: 40%;
+            padding: 10%;
             height: 400px;
         }
     </style>
 </head>
 
-<body>
+<body style="width: 100%;">
     <div id="main"></div>
     <script>
 
+        var myChart = null;
+
         $.getJSON('./data.json', function (data) {
             var chartDom = document.getElementById('main');
-            var myChart = echarts.init(chartDom);
+            myChart = echarts.init(chartDom);
 
             var option = {
 
@@ -58,7 +58,7 @@
                     min: 0,
                     max: 100,
                     position: 'right',
-                    offset: 60,
+                    offset: 40,
                     axisLabel: {
                         formatter: '{value} cnt'
                     }
@@ -96,6 +96,9 @@
         })
 
 
+        window.onresize = function () {
+            myChart.resize();
+        };
 
 
     </script>
