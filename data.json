@@ -182,10 +182,17 @@
         "time": "2022-02-27 14:34"
     },
     {
-        "cicles": 73,
+        "cicles": 83,
         "actualCapacity": 3172,
         "designCapacity": 3076,
         "batteryLife": 100,
         "time": "2022-03-09 00:13"
+    },
+    {
+        "cicles": 83,
+        "actualCapacity": 3171,
+        "designCapacity": 3076,
+        "batteryLife": 100,
+        "time": "2022-03-13 23:53"
     }
 ]
