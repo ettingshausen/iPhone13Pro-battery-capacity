@@ -361,6 +361,13 @@
         "actualCapacity": 3143,
         "designCapacity": 3076,
         "batteryLife": 100,
-        "time": "2022-08-03 220:53"
+        "time": "2022-08-03 22:53"
+    },
+    {
+        "cicles": 203,
+        "actualCapacity": 3120,
+        "designCapacity": 3076,
+        "batteryLife": 100,
+        "time": "2022-08-08 21:53"
     }
 ]
